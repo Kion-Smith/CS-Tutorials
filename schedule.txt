@@ -1,0 +1,10 @@
+TOPIC                                                            DATE 
+How programs work (general)                                     4/3/19
+How to get stated with Java (General instillation guide)        4/3/19 
+Basic I/O and Printing                                          4/5/19
+Data types                                                      4/5/19
+Conditional statements                                          4/10/19
+Loops                                                           4/10/19
+Arrays                                                          4/13/19
+Objects                                                         4/13/19
+Game [big video]                                                4/17/19
