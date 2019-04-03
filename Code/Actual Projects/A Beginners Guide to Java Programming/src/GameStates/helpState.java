@@ -7,6 +7,7 @@ public class helpState extends gameStates
 	public helpState(gameStatesManager gsm) 
 	{
 		super(gsm);
+		init();
 		// TODO Auto-generated constructor stub
 	}
 

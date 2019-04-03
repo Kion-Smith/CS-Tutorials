@@ -8,6 +8,7 @@ public class playingState extends gameStates
 	public playingState(gameStatesManager gsm) 
 	{
 		super(gsm);
+		init();
 		// TODO Auto-generated constructor stub
 	}
 

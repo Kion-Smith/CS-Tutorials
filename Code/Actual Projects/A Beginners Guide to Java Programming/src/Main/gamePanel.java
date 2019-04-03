@@ -1,12 +1,16 @@
 package Main;
 
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 
 import javax.swing.JPanel;
+
+import Controls.keyHandler;
+import GameStates.gameStatesManager;
 
 @SuppressWarnings("serial")
 public class gamePanel extends JPanel implements Runnable, KeyListener
@@ -24,6 +28,8 @@ public class gamePanel extends JPanel implements Runnable, KeyListener
 	private BufferedImage image;
 	private Graphics2D g;
 	
+	private gameStatesManager gsm;
+	
 
 	public gamePanel()
 	{
@@ -38,7 +44,7 @@ public class gamePanel extends JPanel implements Runnable, KeyListener
 		if(gameThread == null)
 		{
 			gameThread = new Thread(this);
-			//keylistner here
+			addKeyListener(this);
 			gameThread.start();
 		}
 	}
@@ -48,6 +54,8 @@ public class gamePanel extends JPanel implements Runnable, KeyListener
 		isRunning = true;
 		image = new BufferedImage(WIDTH,HEIGHT,BufferedImage.TYPE_INT_RGB);
 		g = (Graphics2D) image.getGraphics();
+		
+		gsm = new gameStatesManager();
 
 	}
 	public void run() 
@@ -122,24 +130,30 @@ public class gamePanel extends JPanel implements Runnable, KeyListener
 	
 	public void update()
 	{
-		
+		gsm.update();
+		keyHandler.update();
 	}
 	
 	public void render()
 	{
+		gsm.draw(g);
 		
+		Graphics g2 = getGraphics();
+		g2.drawImage(image,0,0,WIDTH,HEIGHT,null);
+		g2.dispose();
 	}
 	
 	public void keyPressed(KeyEvent k) 
 	{
 		// TODO Auto-generated method stub
-		
+		keyHandler.keySet(k.getKeyCode(), true);
 	}
 
 
 	public void keyReleased(KeyEvent k) 
 	{
 		// TODO Auto-generated method stub
+		keyHandler.keySet(k.getKeyCode(), false);
 		
 	}
 
