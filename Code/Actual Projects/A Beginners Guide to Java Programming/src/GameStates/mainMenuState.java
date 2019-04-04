@@ -19,7 +19,6 @@ public class mainMenuState extends gameStates
 	{
 		super(gsm);
 		init();
-		// TODO Auto-generated constructor stub
 	}
 
 	public void init() 
@@ -30,9 +29,7 @@ public class mainMenuState extends gameStates
 			background = ImageIO.read(getClass().getResourceAsStream("/tempBackground.png"));
 		}
 		catch(Exception e)
-		{
-			System.out.println("a");
-		}
+		{}
 		
 	}
 
