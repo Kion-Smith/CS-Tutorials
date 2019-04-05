@@ -1,0 +1,37 @@
+Script 1 notes:
+	1)-Hi, Welcome to my first part in my series "a begineers guide to java programing". Todays video is going to be talk a little about how programs are understood by computers in general 
+	and then how java is understood. This episode isnt over installing programs or coding, but I recommednd that you watch it.
+	
+	2)-So you Have you ever how computers, and how they are able to read files, write programs?
+	
+	-Are computer's just super intelllegent?
+	
+	-No,computers arent smart, but we are... and we can give the computer instructions and programs to execute to help automate monatious tasks or ones that would normally be impossible. 
+	Current computers dont think like us today, rather they interpt things in its own language of 1's and 0's.
+	Not to get to into digitl logic and physicsThats
+	the fundematal ways eletricty works gives us this binary language for computers, 
+		when we are 1 we are reading current and we are not getting any current we are reading 0. 
+	So to bring it back
+	
+	3)+Computers only really understand one language which is binary 0's and 1's
+		- which can be combined with others to create larger numbers, like our base-10 numbers can
+			Thats good and all but how does this relate to programming? Well we when write programs we are essentially talking to the computer.
+			So we must talk to the computer in a language it understands which we call machine languages. Machine languages are just binary that prompts the computer to do a task.
+			The problem with machine lanuages is that it is hard to understnad but this is hard and tedious, so we came up with assembly languages.
+		-  assembly languages that have symbolic representations of the machines instructions. The assmebly lanuage is processed by an assembler that then converts back to machine languauge. Here we abstracted the data, making it easier to focus on producing pograms. 
+		We are able to to this again
+		- Which allow us to write in high level languages (like java c/c++ ect..), which makes code easier to ready and easier to understand	
+			like before with assemblers, we have a complier which transtlates our languge to assembly lanugages and then assmbler turns that back into machine lanuage
+		This is a oversimplfication of this topic, but I wanted to show how most lanuages understand programs, but now I want to talk about java specfics.
+
+	4)Java specifics::
+		Most languages target a platform, like say for example you wrote somthing in C++ complied it in windows, only other windows machines would be able to understand it.;Java unlike most languages java is platform indpendenet
+		The way java works is the with the Java Complier and  JVM (Java Virtual Machine), which allows us to run
+			indepent of the machine. First code is turned into byte code by the javacomplier then the The JVM acts as an interpreter and then
+			reads and interprates that code into machine code.
+		The JVM has a JIT (Just in time complier) which reads byte code and is able to run the machine language natively. Which is stored in 
+			the JRE (Java Runtime Enviorment)
+		We would only want the JRE for running java programs but we want to create them thats where the JDK comes in.
+		And the superset or the parent of all this information is the JDK which also holds the complier. If you have never done anyprograming before
+		you most likely don't have the JDK installed, and is what we will be covering in the next video, which should be out
+		this friday. Thanks for watching.
