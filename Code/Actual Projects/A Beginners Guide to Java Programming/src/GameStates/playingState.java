@@ -1,42 +1,57 @@
 package GameStates;
 
 import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+
+import javax.imageio.ImageIO;
+
+import Entity.Player;
+import Level.levelLoader;
 
 public class playingState extends gameStates
 {
 
+	BufferedImage playBG;
+	levelLoader level;
+	Player p;
+	
 	public playingState(gameStatesManager gsm) 
 	{
 		super(gsm);
 		init();
-		// TODO Auto-generated constructor stub
 	}
 
-	@Override
 	public void init() 
 	{
-		// TODO Auto-generated method stub
+	
+		try
+		{
+			playBG = new BufferedImage(800,600,BufferedImage.TYPE_INT_RGB);
+			playBG = ImageIO.read(getClass().getResourceAsStream("/playStateBackground.png"));
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 		
+		level = new levelLoader("Level1.txt");
+		//p = new player ();
 	}
 
-	@Override
 	public void update() 
 	{
-		// TODO Auto-generated method stub
+	
 		
 	}
 
-	@Override
 	public void draw(Graphics2D g) 
 	{
-		// TODO Auto-generated method stub
-		
+		g.drawImage(playBG,0,0,800,600,null);
+		level.drawLevel(g);
 	}
 
-	@Override
 	public void handleInput() 
 	{
-		// TODO Auto-generated method stub
 		
 	}
 
