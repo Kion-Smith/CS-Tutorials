@@ -9,6 +9,9 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.JPanel;
 
+import Controls.keyHandler;
+import GameStates.gameStatesManager;
+
 //Most of this main game loop type stuff is inspired heavilly from a guy called foreignguymike on youtube, I have only made slight adapations. 
 //And he got most of his infromation from the book Killer Game Programming in Java, can be bought on amazon
 
@@ -28,7 +31,7 @@ public class gamePanel extends JPanel implements Runnable, KeyListener
 	private BufferedImage image;
 	private Graphics2D g;
 	
-	//private gameStatesManager gsm;
+	private gameStatesManager gsm;
 	
 	public gamePanel()
 	{
@@ -42,6 +45,7 @@ public class gamePanel extends JPanel implements Runnable, KeyListener
 		isRunning = true;
 		image = new BufferedImage(WIDTH,HEIGHT,BufferedImage.TYPE_INT_RGB);
 		g = (Graphics2D) image.getGraphics();
+		gsm = new gameStatesManager();
 		
 	}
 	
@@ -52,8 +56,10 @@ public class gamePanel extends JPanel implements Runnable, KeyListener
 		if(gameThread ==null)
 		{
 			gameThread = new Thread(this);
+			addKeyListener(this);
 			gameThread.start();
 		}
+		
 	}
 	
 	public void run()
@@ -107,34 +113,36 @@ public class gamePanel extends JPanel implements Runnable, KeyListener
 	
 	public void update()
 	{
-	
+		
+		gsm.update();
+		keyHandler.update();
 	}
 	
 	public void render()
 	{
 
+		
 		Graphics g2 = getGraphics();
+		gsm.draw(g);
 		g2.drawImage(image,0,0,WIDTH,HEIGHT,null);
 		g2.dispose();
 	}
 	
 	
-	@Override
-	public void keyPressed(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-		
+	public void keyPressed(KeyEvent k) 
+	{
+		keyHandler.keySet(k.getKeyCode(), true);
+		//System.out.println("Key pressed");
 	}
 
-	@Override
-	public void keyReleased(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-		
+	public void keyReleased(KeyEvent k) 
+	{
+		keyHandler.keySet(k.getKeyCode(), false);
 	}
 
-	@Override
-	public void keyTyped(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-		
+	public void keyTyped(KeyEvent k) 
+	{
+		//do nothing
 	}
 
 

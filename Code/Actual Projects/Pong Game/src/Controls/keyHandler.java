@@ -6,11 +6,11 @@ public class keyHandler
 {
 	public static int UP = 0;
 	public static int DOWN = 1;
-	public static int LEFT = 2;
-	public static int RIGHT = 3;
-	public static int POWER = 4;
+	//public static int LEFT = 2;
+	//public static int RIGHT = 3;
+	public static int ENTER = 2;
 	
-	public static final int NUMOFKEYS = 5;
+	public static final int NUMOFKEYS = 3;
 	
 	public static boolean keyStates[] = new boolean[NUMOFKEYS];
 	public static boolean prevKeyStates[] = new boolean[NUMOFKEYS];
@@ -25,14 +25,15 @@ public class keyHandler
 			case KeyEvent.VK_DOWN:
 				keyStates[DOWN] = b;
 				break;
+				/*
 			case KeyEvent.VK_LEFT:
 				keyStates[LEFT] = b;
 				break;
 			case KeyEvent.VK_RIGHT:
 				keyStates[RIGHT] = b;
-				break;
+				break; */
 			case KeyEvent.VK_ENTER:
-				keyStates[POWER] = b;
+				keyStates[ENTER] = b;
 				break;
 			default:
 				break;
