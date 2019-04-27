@@ -11,9 +11,10 @@ public class gameStatesManager
 	public static final int MENU = 0;
 	public static final int HELP = 1;
 	public static final int PLAY = 2;
-	public static final int GAMEOVER = 3;
+	public static final int WIN = 3;
+	public static final int GAMEOVER = 4;
 	
-	public static final int NUMOFSTATES = 4;
+	public static final int NUMOFSTATES = 5;
 	
 	
 	public gameStatesManager()
@@ -37,9 +38,12 @@ public class gameStatesManager
 			case PLAY:
 				gs[state] = new playState(this);
 				break;
+			case WIN:
+				gs[state] = new winState(this);
+				break;
 			case GAMEOVER:
 				gs[state] = new gameOverState(this);
-				break;
+
 			default:
 				break;
 		}

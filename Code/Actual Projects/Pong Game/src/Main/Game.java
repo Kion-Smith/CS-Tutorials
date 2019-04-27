@@ -10,7 +10,7 @@ public class Game
 		
 		frame.setTitle("PONG");
 		frame.add(new gamePanel());
-		frame.setResizable(true);
+		frame.setResizable(false);
 	
 		frame.pack();
 		frame.setLocationRelativeTo(null);
