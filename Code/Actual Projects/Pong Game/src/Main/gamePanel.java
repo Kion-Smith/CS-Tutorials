@@ -108,7 +108,7 @@ public class gamePanel extends JPanel implements Runnable, KeyListener
 		}
 		
 		isRunning = false;
-		System.exit(0);
+		System.exit(-1);
 	}
 	
 	public void update()
@@ -123,7 +123,9 @@ public class gamePanel extends JPanel implements Runnable, KeyListener
 
 		
 		Graphics g2 = getGraphics();
+		
 		gsm.draw(g);
+		
 		g2.drawImage(image,0,0,WIDTH,HEIGHT,null);
 		g2.dispose();
 	}

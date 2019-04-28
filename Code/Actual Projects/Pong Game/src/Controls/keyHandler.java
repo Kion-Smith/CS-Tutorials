@@ -6,8 +6,6 @@ public class keyHandler
 {
 	public static int UP = 0;
 	public static int DOWN = 1;
-	//public static int LEFT = 2;
-	//public static int RIGHT = 3;
 	public static int ENTER = 2;
 	
 	public static final int NUMOFKEYS = 3;
@@ -25,13 +23,6 @@ public class keyHandler
 			case KeyEvent.VK_DOWN:
 				keyStates[DOWN] = b;
 				break;
-				/*
-			case KeyEvent.VK_LEFT:
-				keyStates[LEFT] = b;
-				break;
-			case KeyEvent.VK_RIGHT:
-				keyStates[RIGHT] = b;
-				break; */
 			case KeyEvent.VK_ENTER:
 				keyStates[ENTER] = b;
 				break;

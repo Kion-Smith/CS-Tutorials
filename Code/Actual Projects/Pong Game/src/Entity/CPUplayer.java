@@ -21,7 +21,7 @@ public class CPUplayer extends playerBase
 	@Override
 	public void update() 
 	{
-		calcNextPostion();
+
 	}
 
 	@Override
@@ -29,12 +29,6 @@ public class CPUplayer extends playerBase
 	{
 		g.setColor(Color.WHITE);
 		g.fillRect(this.curX,this.curY,P_WIDTH,P_HEIGHT);
-		
-	}
-	
-	
-	public void calcNextPostion()
-	{
 		
 	}
 	

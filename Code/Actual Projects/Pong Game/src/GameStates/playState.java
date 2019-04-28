@@ -40,6 +40,7 @@ public class playState extends gameStates
 		
 		p1.update();
 		
+		//cpu controls
 		if((int)(Math.random()*2) == 1)
 		{
 			if(cpu.getY()<ball.curY && cpu.getY() < 480 )
@@ -59,7 +60,7 @@ public class playState extends gameStates
 		//checking horizontally
 		if(ball.curX>800-40)
 		{
-			System.out.println(ball.curX);
+			//System.out.println(ball.curX);
 			if(cpu.getY() < ball.curY && cpu.getY()+110 >= ball.curY)
 			{
 				locSpeed = calcSpeed(ball.curY,cpu.getY(),cpu.getY()+110);
