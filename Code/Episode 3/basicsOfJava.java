@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class basicsOfJava 
 {
@@ -34,22 +35,8 @@ public class basicsOfJava
 		 System.out.println("This is Long max "+Long.MAX_VALUE+", this is Long min"+Long.MIN_VALUE);
 		 
 		 //chars can be added or subtracted from
-		 System.out.println( (char) ('A'-1));//?
+		 System.out.println( (char) ('A'-1));//@
 		 System.out.println( (char) ('A'+1));//b
-		 
-		 //datatype name = number/ 'char'/ true or false/
-		 int x = 10;
-		 char y = 'A';
-		 boolean isRunning = false;
-		 String name = "Hello";
-		 int[] list = {1,2,3,4};
-		 
-		 int[] tempList = new int[10];
-		 
-		 System.out.println(x+""+y+isRunning+""+name);
-		 System.out.println(tempList);
-		 
-		 
 		 
 		 //Data types
 		 /*primitives 
@@ -77,5 +64,25 @@ public class basicsOfJava
 		 	//String can be thought of as an array of chars
 		 
 		 	//Local vars
+		 
+		 //datatype name = number/ 'char'/ true or false/ ""
+		 int x = 10;
+		 int X = 5;
+		 char y = 'A';
+		 boolean isRunning = false;
+		 String name = "Hello";
+
+		 
+		 System.out.println(x+""+y+isRunning+""+name);
+		 
+		 //
+		 Scanner kb = new Scanner(System.in);
+		 System.out.println("What is your name?");
+		 String names  =  kb.nextLine();
+		 
+		 System.out.println("Hello "+ names);
+		 
+		 
+
 	 }
 }
